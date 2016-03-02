@@ -1,13 +1,13 @@
-package thebasics.thread;
+package thebasics.runnable;
 
 /**
- * Created by Abu
+ * Created by Abu.
  */
-public class Mulithread extends Thread
+public class Multirunnable implements Runnable
 {
     private String string;
 
-    public Mulithread(String string)
+    public Multirunnable(String string)
     {
         this.string = string;
     }
@@ -15,9 +15,9 @@ public class Mulithread extends Thread
     @Override
     public void run()
     {
-        for(Character character : string.toCharArray())
+        for (int i = 0; i < 10; i++)
         {
-            System.out.println(this.string);
+            System.out.println("In " + string);
             try
             {
                 Thread.sleep(1000);
@@ -27,6 +27,5 @@ public class Mulithread extends Thread
                 e.printStackTrace();
             }
         }
-
     }
 }
